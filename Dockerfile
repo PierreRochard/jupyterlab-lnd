@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook
+FROM jupyter/scipy-notebook
 
 # Add RUN statements to install packages as the $NB_USER defined in the base images.
 
