@@ -7,3 +7,8 @@ FROM jupyter/minimal-notebook
 
 # If you do switch to root, always be sure to add a "USER $NB_USER" command at the end of the
 # file to ensure the image runs as a unprivileged user by default.
+
+RUN wget https://github.com/lightningnetwork/lnd/releases/download/v0.6.1-beta/lnd-linux-amd64-v0.6.1-beta.tar.gz
+RUN tar -C ~/ -xzf lnd-linux-amd64-v0.6.1-beta.tar.gz
+RUN export PATH=$PATH:~/lnd-linux-amd64-v0.6.1-beta/
+RUN pip install --no-cache-dir lnd-grpc
